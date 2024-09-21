@@ -1,0 +1,86 @@
+@import "./common.scss";
+@import "./animate.scss";
+
+html,
+body,
+:root {
+  padding: 0;
+  margin: 0;
+  font-family: $font_main;
+  font-size: 1rem;
+  overscroll-behavior: none;
+  color: $color_text_dark;
+
+  @include Responsive(D12) {
+    font-size: 14px;
+  }
+
+  scroll-behavior: smooth;
+
+  * {
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: black;
+      border: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.light-link {
+  text-decoration: none;
+  color: $color_text_dark;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: $color_primary1;
+  }
+}
+
+.delay-100ms {
+  animation-delay: 100ms;
+}
+
+.delay-200ms {
+  animation-delay: 200ms;
+}
+.delay-200ms {
+  animation-delay: 200ms;
+}
+.delay-300ms {
+  animation-delay: 300ms;
+}
+.delay-400ms {
+  animation-delay: 400ms;
+}
+.delay-500ms {
+  animation-delay: 500ms;
+}
+.delay-600ms {
+  animation-delay: 600ms;
+}
+.delay-700ms {
+  animation-delay: 700ms;
+}
+.delay-800ms {
+  animation-delay: 800ms;
+}
+.delay-900ms {
+  animation-delay: 900ms;
+}
+.delay-1s {
+  animation-delay: 1s;
+}

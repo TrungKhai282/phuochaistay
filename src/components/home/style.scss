@@ -1,0 +1,60 @@
+@import "../../assets/styles/common.scss";
+
+.homeview {
+  .introduce-section {
+    display: flex;
+    padding: 3rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      flex: 1;
+
+      .title {
+        @include fwSemiBold;
+        font-size: 3rem;
+        max-width: 450px;
+      }
+
+      .description {
+        color: $color_grey;
+      }
+
+      .start-btn {
+        padding: 0.5rem 2rem;
+        color: white;
+        background-color: $color_primary1;
+        width: fit-content;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+    }
+
+    .image-show {
+      width: 45%;
+
+      .swiper {
+        width: 70%;
+
+        .swiper-slide {
+          width: 100%;
+          aspect-ratio: 1/1.2;
+          border-radius: 16px;
+          border: 1px solid $color_light_grey;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}

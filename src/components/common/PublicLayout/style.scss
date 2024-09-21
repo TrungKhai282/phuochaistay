@@ -1,0 +1,49 @@
+@import "@/assets/styles/common.scss";
+
+.public-layout {
+  overflow-x: hidden;
+  .public-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid $color_light_grey;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      @include fwSemiBold;
+      font-size: 1.5rem;
+      span {
+        color: $color_primary1;
+      }
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+
+      .nav-link {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .nav-action {
+        .login-btn {
+          padding: 0.5rem 1rem;
+          background-color: $color_primary1;
+          text-decoration: none;
+          color: white;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}

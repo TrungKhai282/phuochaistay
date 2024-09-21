@@ -1,0 +1,74 @@
+// Font
+$font_main: "Fz Poppins";
+$fw_normal: 400;
+$fw_smBold: 500;
+$fw_bold: 600;
+$fw_exBold: 500;
+
+@mixin fwSemiBold {
+  font-family: "Fz Poppins SemBd";
+}
+
+@mixin fwBold {
+  font-family: "Fz Poppins";
+  font-weight: bold;
+}
+
+@mixin fwExtraBold {
+  font-family: "Fz Poppins ExtBd";
+}
+
+//Color
+$color_primary1: #1679ab;
+$color_primary2: #ffb1b1;
+$color_light_grey: #e5e5e5;
+$color_grey: #b0b0b0;
+$color_text_dark: #102c57;
+$color_light_pink: #ffcbcb;
+
+// Screen size
+$xxs: 320px;
+$xs: 567px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1440px;
+$xl: 1680px;
+$xxl: 1920px;
+
+// media queries responsive
+@mixin Responsive($canvas) {
+  @media only screen and (max-width: $canvas) {
+    @content;
+  }
+}
+@mixin Responsive($canvas) {
+  @if $canvas == xxs {
+    @media only screen and (max-width: $xxs) {
+      @content;
+    }
+  } @else if $canvas == xs {
+    @media only screen and (max-width: $xs) {
+      @content;
+    }
+  } @else if $canvas == sm {
+    @media only screen and (max-width: $sm) {
+      @content;
+    }
+  } @else if $canvas == md {
+    @media only screen and (max-width: $md) {
+      @content;
+    }
+  } @else if $canvas == lg {
+    @media only screen and (max-width: $lg) {
+      @content;
+    }
+  } @else if $canvas == xl {
+    @media only screen and (max-width: $xl) {
+      @content;
+    }
+  } @else if $canvas == xxl {
+    @media only screen and (max-width: $xxl) {
+      @content;
+    }
+  }
+}
