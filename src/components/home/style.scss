@@ -1,23 +1,37 @@
 @import "../../assets/styles/common.scss";
 
 .homeview {
+  .container {
+    padding: 0 1.5rem;
+    width: calc(100% - 3rem);
+  }
   .introduce-section {
     display: flex;
-    padding: 3rem 1.5rem;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    min-height: calc(100vh - 70px);
+
+    @include Responsive(sm) {
+      flex-direction: column;
+      gap: 0;
+    }
 
     .content {
       display: flex;
       flex-direction: column;
       gap: 2rem;
       flex: 1;
+      padding: 3rem 0rem;
 
       .title {
         @include fwSemiBold;
         font-size: 3rem;
         max-width: 450px;
+
+        @include Responsive(md) {
+          font-size: 2rem;
+        }
       }
 
       .description {
@@ -26,16 +40,16 @@
 
       .start-btn {
         padding: 0.5rem 2rem;
-        color: white;
-        background-color: $color_primary1;
-        width: fit-content;
-        border-radius: 4px;
-        text-decoration: none;
       }
     }
 
     .image-show {
       width: 45%;
+      padding: 3rem 0rem;
+
+      @include Responsive(sm) {
+        width: 100%;
+      }
 
       .swiper {
         width: 70%;
@@ -56,5 +70,133 @@
         }
       }
     }
+  }
+
+  .most-picked-section {
+    padding: 0 0 3rem;
+    .title {
+      @include fwSemiBold;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .list-picker {
+      display: grid;
+      grid-template-areas:
+        "picker1  picker2  picker3"
+        "picker1  picker4  picker5";
+      grid-template-columns: 1fr 1fr 1fr; /* 3 columns with equal width */
+      grid-template-rows: auto auto; /* auto height for each row */
+      gap: 1.5rem;
+
+      @include Responsive(sm) {
+        width: 100%;
+        grid-template-columns: 1fr 1fr; /* 3 columns with equal width */
+        grid-template-rows: auto auto auto; /* auto height for each row */
+        grid-template-areas:
+          "picker1  picker2"
+          "picker1  picker3"
+          "picker4  picker5";
+      }
+
+      @include Responsive(xs) {
+        width: 100%;
+        grid-template-columns: 1fr; /* 3 columns with equal width */
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas:
+          "picker1"
+          "picker2"
+          "picker3"
+          "picker4"
+          "picker5";
+      }
+
+      .picker {
+        overflow: hidden;
+        border-radius: 8px;
+        position: relative;
+        cursor: pointer;
+
+        &:nth-child(1) {
+          grid-area: picker1;
+
+          @include Responsive(xs) {
+            aspect-ratio: 1.5/1;
+          }
+        }
+        &:nth-child(2) {
+          grid-area: picker2;
+          aspect-ratio: 1.5/1;
+        }
+
+        &:nth-child(3) {
+          grid-area: picker3;
+          aspect-ratio: 1.5/1;
+        }
+
+        &:nth-child(4) {
+          grid-area: picker4;
+          aspect-ratio: 1.5/1;
+        }
+
+        &:nth-child(5) {
+          grid-area: picker5;
+          aspect-ratio: 1.5/1;
+        }
+
+        &:hover {
+          .ant-image {
+            filter: brightness(70%);
+          }
+        }
+
+        .ant-image {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          transition: 0.2s ease-in-out all;
+
+          img {
+            object-fit: cover;
+            min-width: 100%;
+            min-height: 100%;
+          }
+        }
+
+        .price {
+          position: absolute;
+          z-index: 3;
+          border-radius: 0px 0px 0px 8px;
+          top: 0;
+          right: 0;
+          padding: 0.5rem;
+          background-color: $color_primary1;
+          color: white;
+          font-size: 0.8rem;
+        }
+
+        .address {
+          position: absolute;
+          z-index: 3;
+          padding: 1rem;
+          font-size: 0.8rem;
+          bottom: 0;
+          left: 0;
+          color: white;
+
+          span {
+            @include fwSemiBold;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .more-btn {
+    margin: 0 auto;
   }
 }

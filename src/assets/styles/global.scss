@@ -50,6 +50,26 @@ body,
   }
 }
 
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: $color_primary1;
+  border: 1px solid $color_primary1;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  transition: 0.2s ease-in-out all;
+
+  &:hover {
+    background-color: transparent;
+    color: $color_primary1;
+  }
+}
+
 .delay-100ms {
   animation-delay: 100ms;
 }

@@ -25,7 +25,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="nav-action">
-            <Link href={"/"} className="login-btn">
+            <Link href={"/"} className="primary-btn login-btn">
               Đăng nhập
             </Link>
           </div>

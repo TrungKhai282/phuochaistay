@@ -5,6 +5,7 @@ export const metadata: Metadata = {
 };
 import "@/assets/styles/global.scss";
 import "@/assets/font/stylesheet.scss";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 export default function RootLayout({
   children,
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AntdRegistry>{children}</AntdRegistry>
+      </body>
     </html>
   );
 }

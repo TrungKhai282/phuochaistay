@@ -16,7 +16,7 @@ const IntroduceSection = () => {
           Chúng tôi cung cấp những gì bạn cần để tận hưởng kỳ nghỉ cùng gia
           đình. Đã đến lúc tạo ra nhiều khoảnh khắc đáng nhớ.
         </div>
-        <Link href={"/"} className="start-btn">
+        <Link href={"/"} className="primary-btn start-btn">
           Bắt đầu ngay
         </Link>
       </div>
